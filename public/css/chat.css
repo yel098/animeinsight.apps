@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.chat-card {
+  display: none;
+  border: 8px solid #dddddd;
+  border-radius: 24px;
+  overflow: hidden;
+  width: max-content;
+}
+
+.name > span {
+  color: #bbb;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  width: 400px;
+  height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.message-left,
+.message-right {
+  list-style: none;
+  padding: 8px 12px;
+  margin: 12px;
+  max-width: 250px;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.message-left {
+  border-radius: 20px 20px 20px 0px;
+  align-self: flex-start;
+  background-color: #fff;
+  box-shadow: -2px 2px 4px #dcdcdc;
+}
+
+.message-right {
+  border-radius: 20px 20px 0px 20px;
+  align-self: flex-end;
+  background-color: #2d2d2d;
+  box-shadow: 2px 2px 4px #dcdcdc;
+  color: #f6f6f6;
+}
+
+.message-left > p > span,
+.message-right > p > span {
+  display: block;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.message-input {
+  flex-grow: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  background-color: #fff;
+}
+
+.send-button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  &:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  &:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  &:hover span {
+    transform: translateX(5em);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
